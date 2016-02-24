@@ -3,8 +3,12 @@
 <head>
 </head>
 <body>
-	<p>l'amour est un enfant de boheme qui n'a jamais jamais connu de loi</p>
-	<%user = { :first_name => "Michael", :last_name => "Hartl" }%>
-	<%=user[:first_name]%>
+	<div class="center jumbotron">
+	  <%= image_tag "smartgrid.png" %>
+	  <h2>Smart Grid Web Community</h2>
+	  <h3>Green World !</h3>
+	  <%= link_to "Sign up", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+	
 </body>
 </html>
