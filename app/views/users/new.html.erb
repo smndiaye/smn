@@ -6,19 +6,3 @@
 <%= link_to 'Back', users_path %>
 
 
-</br></br>
-<% some_string = "<div>Hello World!</div>" %>
-<%= some_string %>
-<!-- outputs: &lt;div&gt;Hello Worlds!&lt;/div&gt; -->
-</br></br>
-<%=raw some_string %>
-<!-- outputs: <div>Hello Worlds!</div> -->
-
-</br>
-<%=raw "<blink>Testing</blink>" %>
-</br>
-<%title =  "A & B"%>
-
-<%=string = CGI.escapeHTML(title)%>
-</br>
-<%=string = CGI.unescapeHTML(title)%>
