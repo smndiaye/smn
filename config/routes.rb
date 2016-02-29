@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   #get 'home' => 'static_pages#home'
   #get '/page-with-hyphens', to: 'controller#page_with_hypens',  as: 'page_with_hyphens'
-  get 'vaddy-ddad0cd62c54c6f', to: 'users#new',  as: 'new'
+  get 'vaddy-ddad0cd62c54c6f', to: 'users#index',  as: 'index'
   resources :microposts
   resources :users
   #root 'users#index'
