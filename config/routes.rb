@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'signup'  => 'users#new'
   get 'home' => 'static_pages#home'
   #get 'vaddy-a715d37932b2ecd' => 'users#vaddy-a715d37932b2ecd'
-  root 'users#vaddy-a715d37932b2ecd.html'
+  root 'users#vaddy-ddad0cd62c54c6f.html'
   resources :microposts
   resources :users
   #root 'users#index'
