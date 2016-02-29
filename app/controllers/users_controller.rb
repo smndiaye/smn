@@ -10,7 +10,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
-
+  def vaddy
+  end
+  def sqlinj
+    render :text => User.find_by_name(params[:id]).inspect + "\n"
+  end
   # GET /users/1
   # GET /users/1.json
   def show
@@ -29,7 +33,6 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
