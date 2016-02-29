@@ -13,7 +13,13 @@ class UsersController < ApplicationController
   def vaddy
   end
   def sqlinj
-    render :text => User.find_by_name(params[:id]).inspect + "\n"
+    if params[:search]
+        #@users = User.search(params[:search]).order("created_at DESC")
+        query = params[:search]
+        @users = find(:all, :conditions => "name LIKE '%#{query}%'")
+      else
+        @users = User.all.order('created_at DESC')
+      end
   end
   # GET /users/1
   # GET /users/1.json
