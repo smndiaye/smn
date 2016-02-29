@@ -13,12 +13,11 @@ class UsersController < ApplicationController
   def vaddy
   end
   def sqlinj
-    if params[:search]
-        #@users = User.search(params[:search]).order("created_at DESC")
-        query = params[:search]
-        @users = find(:all, :conditions => "name LIKE '%#{query}%'")
+    @users = User.all
+      if params[:search]
+        @users = User.search(params[:search]).order("created_at DESC")
       else
-        @users = User.all.order('created_at DESC')
+        @users = User.all.order("created_at DESC")
       end
   end
   # GET /users/1

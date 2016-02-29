@@ -9,6 +9,10 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+	  <%= form_tag(sql_path, :method => "get", id: "search-form") do %>
+	      <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+	      <%= submit_tag "Search", :name => nil %>
+	  <% end %>
     <%= render 'layouts/header' %>
     <div class="container">
       <%= yield %>
