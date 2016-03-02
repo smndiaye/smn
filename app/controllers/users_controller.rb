@@ -16,8 +16,10 @@ class UsersController < ApplicationController
     #@users = User.all
     
       if params[:search]
-       @users = User.search(params[:search]).order("created_at DESC")
-       #@users = User.find(:all, :conditions => { :name => params[:search] })
+       #test script ' OR EXISTS (SELECT * FROM Users) AND ''='
+       #@users = User.where("name LIKE'%#{params[:search]}%'")
+        
+       @users = User.where("name = '#{params[:search]}'")
       else
        @users = User.all.order("created_at DESC")
       end
