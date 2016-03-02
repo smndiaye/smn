@@ -1,6 +1,31 @@
+<%if false%>
 <% provide(:title, 'Sign up') %>
-<h1>New User</h1>
+<h1>XSS test</h1>
 
 <%= raw(render 'form' )%>
 
 <%= link_to 'Back', users_path %>
+<%end%>
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= f.label :name %>
+      <%= raw(f.text_field :name) %>
+
+      <%= f.label :email %>
+      <%= raw(f.email_field :email) %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
