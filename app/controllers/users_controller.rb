@@ -29,7 +29,10 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
   end
-
+  # XSS test
+  def xss
+    @user = User.new
+  end
   # GET /users/new
   def new
     @user = User.new

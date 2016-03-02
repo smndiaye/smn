@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
+  get 'xss'  => 'microposts#new'
   get 'sql'     => 'users#sqlinj'
   #get 'home' => 'static_pages#home'
   #get '/page-with-hyphens', to: 'controller#page_with_hypens',  as: 'page_with_hyphens'
